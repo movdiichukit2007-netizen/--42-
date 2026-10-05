@@ -17,6 +17,10 @@ namespace ExceptionsLab
                 int number = Int32.Parse(input!);
                 Console.WriteLine($"Ви ввели число: {number}");
             }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("❌ Помилка: рядок не може бути порожнім (null)!");
+            }
             catch (FormatException)
             {
                 Console.WriteLine("❌ Помилка: введене значення не є числом!");
@@ -28,6 +32,10 @@ namespace ExceptionsLab
             catch (OverflowException)
             {
                 Console.WriteLine("❌ Помилка: значення більше за максимально допустиме для Int32 (2 147 483 647)!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Невідома помилка: {ex.Message}");
             }
         }
     }
