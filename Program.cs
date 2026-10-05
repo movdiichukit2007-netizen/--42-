@@ -11,8 +11,16 @@ namespace ExceptionsLab
 
             Console.Write("Будь ласка, введіть ціле число: ");
             string? input = Console.ReadLine();
-            int number = Int32.Parse(input!);
-            Console.WriteLine($"Ви ввели число: {number}");
+
+            try
+            {
+                int number = Int32.Parse(input!);
+                Console.WriteLine($"Ви ввели число: {number}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("❌ Помилка: введене значення не є числом!");
+            }
         }
     }
 }
