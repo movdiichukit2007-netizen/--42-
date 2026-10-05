@@ -21,6 +21,14 @@ namespace ExceptionsLab
             {
                 Console.WriteLine("❌ Помилка: введене значення не є числом!");
             }
+            catch (OverflowException) when (input != null && input.Trim().StartsWith("-"))
+            {
+                Console.WriteLine("❌ Помилка: значення менше за мінімально допустиме для Int32 (-2 147 483 648)!");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("❌ Помилка: значення більше за максимально допустиме для Int32 (2 147 483 647)!");
+            }
         }
     }
 }
