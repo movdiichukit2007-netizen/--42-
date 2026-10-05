@@ -37,6 +37,10 @@ namespace ExceptionsLab
             {
                 Console.WriteLine($"❌ Невідома помилка: {ex.Message}");
             }
+            finally
+            {
+                Console.WriteLine("--- [Блок finally]: Спробу введення опрацьовано ---");
+            }
         }
     }
 }
